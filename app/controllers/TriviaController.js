@@ -5,6 +5,7 @@ export class TriviaController {
     constructor() {
         console.log('trivia controller loaded')
         this.getQuestions()
+        AppState.on('questions', _drawQuestions)
     }
 
     async getQuestions() {
@@ -18,7 +19,14 @@ export class TriviaController {
         }
     }
 
+    async waitForPromise() {
 
+        const message = await new Promise((resolve) => {
+            setTimeout(() => {
+                resolve('running 3rd')
+            }, 3000,)
+        })
+    }
 }
 
 

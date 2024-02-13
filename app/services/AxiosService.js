@@ -1,4 +1,4 @@
 export const triviaApi = axios.create({
-    baseURL: 'https://opentdb.com/api.php?amount=10&category=12&difficulty=hard&type=multiple',
+    baseURL: 'https://opentdb.com/api.php?amount=10',
     timeout: 8999
 })

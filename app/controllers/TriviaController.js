@@ -1,17 +1,25 @@
-import { triviaService } from "../services/TriviaService.js"
+import { AppState } from "../AppState.js"
+import { triviaService } from "../services/TriviaService.js";
 import { Pop } from "../utils/Pop.js";
+
+function _drawResults() {
+    const results = AppState.results
+    console.log('drawing results', results)
+    let htmlString = ''
+    results.forEach(result => htmlString += result.CardHTMLTemplate)
+}
 
 export class TriviaController {
     constructor() {
         console.log('trivia controller loaded')
-        this.getQuestions()
-        AppState.on('questions', _drawQuestions)
+        this.getResults()
+        AppState.on('results', _drawResults)
     }
 
-    async getQuestions() {
+    async getResults() {
         try {
-            await triviaService.getQuestions()
-            Pop.success('get questions')
+            await triviaService.getResults()
+            Pop.success('get results')
         }
         catch (error) {
             Pop.error(error)

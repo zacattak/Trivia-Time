@@ -1,5 +1,5 @@
 import { AppState } from "../AppState.js"
-import { triviaService } from "../services/TriviaService.js";
+// import { triviaService } from "../services/TriviaService.js";
 import { Pop } from "../utils/Pop.js";
 
 function _drawResults() {
@@ -9,16 +9,16 @@ function _drawResults() {
     results.forEach(result => htmlString += result.CardHTMLTemplate)
 }
 
-export class TriviaController {
+export class QuestionsController {
     constructor() {
-        console.log('trivia controller loaded')
-        this.getResults()
-        AppState.on('results', _drawResults)
+        console.log('questions controller loaded')
+        this.getQuestions()
+        AppState.on('questions', _drawQuestions)
     }
 
-    async getResults() {
+    async getQuestions() {
         try {
-            await triviaService.getResults()
+            await triviaService.getQuestions()
             Pop.success('get results')
         }
         catch (error) {

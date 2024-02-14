@@ -1,6 +1,6 @@
-export class Question {
+export class Result {
     constructor(data) {
         this.id = data.id
-        th
+        this.
     }
 }

@@ -1,4 +1,4 @@
-import { TriviaController } from "./controllers/TriviaController.js"
+import { TriviaController } from "./controllers/QuestionsController.js"
 import { Router } from "./utils/Router.js";
 
 

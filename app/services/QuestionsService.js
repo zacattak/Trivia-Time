@@ -1,7 +1,7 @@
 import { triviaApi } from "./AxiosService.js"
 class TriviaService {
     async getResults() {
-        const response = await triviaApi.get('category/results')
+        const response = await triviaApi.get('category/question')
         console.log('from api', response.data);
 
     }
